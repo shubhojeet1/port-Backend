@@ -1,9 +1,7 @@
 const express = require("express");
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
 const app = express();
-// let PORT = 6000;
-
-const sendMail = require("./controllers/sendMail");
+const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 
@@ -49,16 +47,7 @@ app.post("/sendEmail", (req, res) => {
   }
 });
 
-// app.post("/mail", sendMail);
-
-// app.get("/mail", sendMail);
-
-const start = async () => {
-  try {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  } catch (error) {}
-};
-
-start();
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
