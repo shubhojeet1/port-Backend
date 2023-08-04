@@ -1,9 +1,11 @@
 const express = require("express");
 const nodemailer = require('nodemailer');
+const cors = require('cors'); // Import the cors middleware
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
+app.use(cors()); // Enable CORS for all routes
 
 app.get("/", (req, res) => {
   res.send("I am a server");
