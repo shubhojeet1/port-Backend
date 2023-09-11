@@ -29,7 +29,7 @@ app.post("/sendEmail", (req, res) => {
 
     const mailOptions = {
       from: senderEmail,
-      to: 'coderoofitsolutions@gmail.com', // Replace this with your desired recipient email address
+      to: 'mittal.30ashish@gmail.com', // Replace this with your desired recipient email address
       subject,
       text: `Name: ${name}\nSender's email: ${senderEmail}\n\n${message}` // Include sender's name and email in the body 
     };
